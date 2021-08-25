@@ -21,7 +21,7 @@
 - buffer
 - ...
 #### Event Loop
-**CALL STACK**
+
 | Call stack |
 |:----------:|
 |function4() |
@@ -29,6 +29,7 @@
 |function2() |
 |function1() |
 - **Event Loop** ouve as funções que chegam e envia para as thread disponíveis, PILHA
+
 #### Gerenciadores de Pacote
 > NPM
 > YARN
