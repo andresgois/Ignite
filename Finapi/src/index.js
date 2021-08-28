@@ -41,8 +41,8 @@ function getBalance(statement){
 app.post("/account", (request, response) => {
   const { cpf, name } = request.body;
 
-  customerAlreadyExists = customers.some(
-    (customer) => customer.cpf = cpf
+  const customerAlreadyExists = customers.some(
+    (customer) => customer.cpf === cpf
   );
 
   if(customerAlreadyExists) {
@@ -55,6 +55,7 @@ app.post("/account", (request, response) => {
     id: uuid4(),
     statement: []
   });
+  console.log(customers);
 
   return response.status(201).send();
 });
@@ -132,13 +133,14 @@ app.delete("/account", verifyIfExixstsAccountCPF, (request, response) => {
   const {customer } = request;
 
   // splice
-  customers.slice(customer, 1);
+  //console.log(customer);
+  customers.splice(customer, 1);
 
   return response.status(200).json(customers);
 });
 
 app.get("/balance", verifyIfExixstsAccountCPF, (request, response) => {
-  const {customer } = request;
+  const { customer } = request;
 
   const balance = getBalance(customer.statement);
 
