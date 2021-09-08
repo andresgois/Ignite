@@ -146,4 +146,14 @@ referer: https://app.teste.com.br/node
     - Atualização do status do usuários - PATCH
         - http://enderecoserver.com.br/v1/users/status
 
+#### Projeto Fundamentos
+> fundamentos-nodejs
+- 01-Fundamentos.md
+#### Projeto Finapi
+> Finapi
+- 02-Finapi.md
+
+## MÓDULO II - TypeScript
+> typescript
+- 03-typescript.md
 

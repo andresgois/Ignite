@@ -1,0 +1,13 @@
+{
+  "name": "proj_typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "add": "^2.0.6",
+    "express": "^4.17.1",
+    "typescript": "^4.4.2",
+    "yarn": "^1.22.11"
+  }
+}
