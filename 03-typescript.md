@@ -83,3 +83,4 @@ console.log(soma())         // erro
 - entra no arquivo tsconfig.json e configura uma pasta na propriedade 
   - "outDir": "./dist"
   - criará os arquivos compilados na raiz do projeto
+
