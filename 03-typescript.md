@@ -1,11 +1,6 @@
 
 # TypeScript
 
-## 
-###
-####
-#####
-
 ## TypeScript
 - Uma linguagem open-source da microsorf
 - Superset do javascript

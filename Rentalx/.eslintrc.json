@@ -6,7 +6,7 @@
     },
     "extends": [
         "airbnb-base",
-        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended", 
         "prettier",
         "plugin:prettier/recommended"
     ],
@@ -77,7 +77,8 @@
                 ]
             }
         ],
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "allowSyntheticDefaultImports": true
     },
     "settings": {
         "import/resolver": {

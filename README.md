@@ -155,5 +155,6 @@ referer: https://app.teste.com.br/node
 
 ## MÓDULO II - TypeScript
 > typescript
-- 03-typescript.md
+### 03-typescript.md
+- Configurar debug
 

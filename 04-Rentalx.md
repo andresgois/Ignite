@@ -11,3 +11,34 @@
 - yarn add @typescript-eslint/eslint-plugin@latest eslint-config-airbnb-base@latest eslint-plugin-import@^2.22.1 @typescript-eslint/parser@latest -D
 - yarn add -D eslint-plugin-import-helpers eslint-import-resolver-typescript
 - yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+- fará a converção do ts para js automático
+  - yarn add ts-node-dev -D
+- yarn add typescript -D
+- yarn tsc --init
+- desabilitar
+  - "strict": true, 
+- yarn add uuid
+- yarn add @types/uuid -D
+
+### Configurando debug
+- Clique no botão Play que tem um inserto
+- Em Baixo de Run adn Debug
+  - create a launc.json file
+  - opção de NodeJS
+- **launch** : Executa o debug assim que roda a aplicação
+```
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "outFiles": ["${workspaceFolder}/**/*.js"]
+    }
+  ]
+}
+```
+#### Adicionar --inspect aos scripts de dev
+![Diagrama do projeto](./img/diagrama.png)
