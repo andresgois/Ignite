@@ -42,3 +42,17 @@
 ```
 #### Adicionar --inspect aos scripts de dev
 ![Diagrama do projeto](./img/diagrama.png)
+
+## SOLID
+##### S
+  - **SRP** Single Responsability Principle (Princípio da Responsabilidade Única)
+##### O
+  - **OCP** Open Closed Principle (Princípio do Aberto/Fechado)
+##### L
+  - **LSP** Liskov Substituion Priciple (Princípio da Substituição de Liskov)
+##### I
+  - **ISP** Interface Segregation Principle (Princípio da Segregação de Interface)
+##### D
+  - **DIP** Dependency Inversion Principle (Princípio da Inversão de Dependência)
+
+
