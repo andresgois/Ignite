@@ -148,13 +148,14 @@ referer: https://app.teste.com.br/node
 
 #### Projeto Fundamentos
 > fundamentos-nodejs
-- 01-Fundamentos.md
+- [01-Fundamentos](./01-Fundamentos.md)
 #### Projeto Finapi
 > Finapi
-- 02-Finapi.md
+- [02-Finapi](./02-Finapi.md)
 
 ## MÓDULO II - TypeScript
 > typescript
-### 03-typescript.md
-- Configurar debug
+- [03-typescript](./03-typescript.md)
+	- Configurar debug
+- [04-Rentalx](./04-Rentalx.md)
 

@@ -19,6 +19,11 @@
   - "strict": true, 
 - yarn add uuid
 - yarn add @types/uuid -D
+- yarn add multer
+- yarn add @types/multer
+- yarn add csv-parse 
+- yarn add swagger-ui-express
+- yarn add @types/swagger-ui-express -D
 
 ### Configurando debug
 - Clique no botão Play que tem um inserto
@@ -54,5 +59,7 @@
   - **ISP** Interface Segregation Principle (Princípio da Segregação de Interface)
 ##### D
   - **DIP** Dependency Inversion Principle (Princípio da Inversão de Dependência)
+  
+#  
 
 

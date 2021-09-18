@@ -17,8 +17,7 @@ class ImportCategoryUseCase {
       const categories: IImportCategory[] = [];
 
       // dentro da pra específica o delimitador, mas como nesse caso o padrão já é a vírgula
-      const parseFile = csvParse()
-      
+      const parseFile = csvParse()      
       stream.pipe(parseFile);
       
       parseFile.on("data", async (line) => {
@@ -29,6 +28,8 @@ class ImportCategoryUseCase {
           description,
         });
       }).on("end", () => {
+        // remove o arquivo
+        fs.promises.unlink(file.path);
         resolve(categories);
       }).on("error", (err) => {
         reject(err)
@@ -42,7 +43,6 @@ class ImportCategoryUseCase {
    
     categories.map( async (category) => {
       const {name, description} = category;
-
       const existCategory = this.categoriesRepository.findByName(name);
 
       if(!existCategory){
