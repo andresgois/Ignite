@@ -26,6 +26,7 @@
 - yarn add @types/swagger-ui-express -D
 - yarn add typeorm reflect-metadata
 - yarn add pg
+- yarn add tsyringe
 
 ### Configurando debug
 - Clique no botão Play que tem um inserto
