@@ -220,4 +220,5 @@ services:
 - yarn typeorm migration:run
 - yarn typeorm migration:revert
 - yarn typeorm migration:create -n CreateSpecifications
+- yarn typeorm migration:create -n CreateUsers
 
