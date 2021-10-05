@@ -219,4 +219,5 @@ services:
 - yarn typeorm migration:create -n CreateCategories
 - yarn typeorm migration:run
 - yarn typeorm migration:revert
+- yarn typeorm migration:create -n CreateSpecifications
 
