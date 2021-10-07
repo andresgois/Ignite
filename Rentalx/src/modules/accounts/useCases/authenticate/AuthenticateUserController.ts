@@ -1,0 +1,7 @@
+
+
+class AuthenticateUserController {
+
+}
+
+export { AuthenticateUserController };

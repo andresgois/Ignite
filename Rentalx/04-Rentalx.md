@@ -33,6 +33,8 @@
 - yarn remove bcrypt @types/bcrypt
 - yarn add bcryptjs
 - yarn add @types/bcryptjs -D
+- yarn add jsonwebtoken
+- yarn add @types/jsonwebtoken -D
 
 # adicionar o a tipagem do bcryptjs
 yarn add @types/bcryptjs -D
