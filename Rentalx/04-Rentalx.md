@@ -27,6 +27,8 @@
 - yarn add typeorm reflect-metadata
 - yarn add pg
 - yarn add tsyringe
+- yarn add bcrypt
+- yarn add @types/bcrypt -D
 
 ### Configurando debug
 - Clique no botão Play que tem um inserto
