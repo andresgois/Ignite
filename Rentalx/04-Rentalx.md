@@ -29,7 +29,13 @@
 - yarn add tsyringe
 - yarn add bcrypt
 - yarn add @types/bcrypt -D
+- remover o bcrypt
+- yarn remove bcrypt @types/bcrypt
+- yarn add bcryptjs
+- yarn add @types/bcryptjs -D
 
+# adicionar o a tipagem do bcryptjs
+yarn add @types/bcryptjs -D
 ### Configurando debug
 - Clique no botão Play que tem um inserto
 - Em Baixo de Run adn Debug
@@ -195,7 +201,7 @@ CMD ["npm","run","dev"]
 - docker-compose up --force-recreate
 - docker inspect --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' rentx
 - docker inspect --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' database_ignite
-
+- docker container exec -it rentx /bin/sh
 ```
 version: "3.7"
 services:
