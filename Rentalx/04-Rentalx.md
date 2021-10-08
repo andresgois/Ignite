@@ -35,9 +35,13 @@
 - yarn add @types/bcryptjs -D
 - yarn add jsonwebtoken
 - yarn add @types/jsonwebtoken -D
+- yarn add express-async-errors
 
-# adicionar o a tipagem do bcryptjs
-yarn add @types/bcryptjs -D
+### Arquivos de ajuda
+- **Pega o hash para colocar na função do JWT**
+- [Criptografia MD](https://www.md5online.org/md5-encrypt.html)
+- **Verifica se o JWT é valido**
+- [JWT.io](https://jwt.io/)
 ### Configurando debug
 - Clique no botão Play que tem um inserto
 - Em Baixo de Run adn Debug
