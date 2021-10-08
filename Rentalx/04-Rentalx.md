@@ -235,4 +235,5 @@ services:
 - yarn typeorm migration:revert
 - yarn typeorm migration:create -n CreateSpecifications
 - yarn typeorm migration:create -n CreateUsers
+- yarn typeorm migration:create -n AlterUserAddAvatar
 
