@@ -208,6 +208,29 @@ CMD ["npm","run","dev"]
 - docker inspect --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' rentx
 - docker inspect --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' database_ignite
 - docker container exec -it rentx /bin/sh
+- Caso aconteça algum erro de conexão entre os container
+  - docker-compose down -v --rmi local
+  - docker-compose up -d
+- Caso teste
+  - index do database
+
+```
+export default async (host = "database"): Promise<Connection> => {
+  const defaultOptions = await getConnectionOptions();
+  return createConnection(
+    Object.assign(defaultOptions, {
+      host,
+    })
+  );
+};
+```
+  - No servidor
+
+```
+import createConnection from "@shared/infra/typeorm";
+createConnection("localhost");
+```
+
 ```
 version: "3.7"
 services:
