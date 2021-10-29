@@ -36,6 +36,8 @@
 - yarn add jsonwebtoken
 - yarn add @types/jsonwebtoken -D
 - yarn add express-async-errors
+- yarn add jest @types/jest -D
+- yarn add ts-jest -D
 
 ### Arquivos de ajuda
 - **Pega o hash para colocar na função do JWT**
@@ -260,3 +262,5 @@ services:
 - yarn typeorm migration:create -n CreateUsers
 - yarn typeorm migration:create -n AlterUserAddAvatar
 
+### Tests
+- yarn jest --init
