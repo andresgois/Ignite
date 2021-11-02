@@ -1,19 +1,20 @@
-import { Category } from "../../entities/Category";
+
+import { Category } from "@modules/cars/entities/Category";
 import { ICategoriesRepository, ICreateCategoryDTO } from "../ICategoriesRepository";
 
 
 class PostgresCategoriesRepository implements ICategoriesRepository{
 
-  findByName(name: string): Category {
+  async findByName(name: string): Promise<Category> {
     //throw new Error("Method not implemented.");
     console.log(name);
     return null;
   }
-  list(): Category[] {
+  async list(): Promise<Category[]> {
     //throw new Error("Method not implemented.");
     return null;
   }
-  create({ name, description} : ICreateCategoryDTO): void {
+  async create({ name, description} : ICreateCategoryDTO): Promise<void> {
     //throw new Error("Method not implemented.");
     console.log(name, description);
     return null;

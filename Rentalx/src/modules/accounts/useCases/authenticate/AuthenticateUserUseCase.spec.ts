@@ -1,10 +1,11 @@
 
+import { AppError } from "@errors/AppError";
+import { ICreateUserDTO } from "@modules/accounts/dtos/ICreateUserDTO";
+import { UsersRepositoryInMemory } from "@modules/accounts/repositories/in-memory/UsersRepositoryInMemory";
 import "reflect-metadata";
-import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
-import { UsersRepositoryInMemory } from '../../repositories/in-memory/UsersRepositoryInMemory'
-import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 import { CreateUserUseCase } from "../createUser/CreateUserUseCase";
-import { AppError } from "../../../../errors/AppError";
+import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
+
 
 
 let authenticateUserUseCase: AuthenticateUserUseCase;
