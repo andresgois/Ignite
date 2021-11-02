@@ -1,5 +1,3 @@
-
-
 # Projeto Rentalx
 ## Configurações Prettier e Eslint
 - [Configs](https://www.notion.so/ESLint-e-Prettier-Trilha-Node-js-d3f3ef576e7f45dfbbde5c25fa662779#eaf6e8bdcabc4d809cdae302e29750da)
@@ -40,6 +38,10 @@
 - yarn add ts-jest -D
 - yarn add tsconfig-paths -D
 
+
+- **Ao  instalar o tsconfig/paths, será necessário adicionar ao package.json a seguinte descrição**
+  - *-r tsconfig-paths/register*
+  - **Para que ele reconheça na hora de executa a importação por modulos**
 ### Arquivos de ajuda
 - **Pega o hash para colocar na função do JWT**
 - [Criptografia MD](https://www.md5online.org/md5-encrypt.html)
