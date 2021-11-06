@@ -291,9 +291,8 @@ services:
 
 **RN**
 - Não deve ser possível cadatrar um carro com uma placa já existente.
-- Não deve ser possível alterar uma placa de carro já cadastrado.
 - O carro deve ser cadastrado, por padrão, com disponibilidade.
-- O usuário responsavél pelo cadastro deve ser um usuário administrador.
+- *O usuário responsavél pelo cadastro deve ser um usuário administrador.*
 
 ## Listagem de carros
 
