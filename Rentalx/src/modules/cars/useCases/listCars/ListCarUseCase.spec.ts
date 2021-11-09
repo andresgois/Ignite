@@ -19,10 +19,10 @@ describe("List Car", () => {
       license_plate: "HIJ-8596", 
       fine_amount: 160, 
       brand: "Chevrolet", 
-      category_id: "2b7f8901-de62-4db9-8895-a07c93ed590f"
+      category_id: "category_teste1"
     })
     const cars = await listCarsUseCase.execute({});
-    //console.log(cars);
+    
     expect(cars).toEqual([car]);
   });
 
@@ -34,12 +34,12 @@ describe("List Car", () => {
       license_plate: "ABC-2096", 
       fine_amount: 156, 
       brand: "Volkswagen", 
-      category_id: "2n7f8901-de62-4db9-8895-a07c93ed590f"
+      category_id: "category_teste2"
     })
     const cars = await listCarsUseCase.execute({
       brand: "Volkswagen",
     });
-    console.log(cars);
+    
     expect(cars).toEqual([car]);
   });
 
