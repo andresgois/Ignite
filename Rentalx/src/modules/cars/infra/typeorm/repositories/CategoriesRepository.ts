@@ -3,7 +3,7 @@ import { getRepository, Repository } from "typeorm";
 import { 
   ICategoriesRepository, 
   ICreateCategoryDTO 
-} from "../../repositories/ICategoriesRepository";
+} from "../../../repositories/ICategoriesRepository";
 
 class CategoriesRepository implements ICategoriesRepository {
 
