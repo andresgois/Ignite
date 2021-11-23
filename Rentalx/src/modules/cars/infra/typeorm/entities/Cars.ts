@@ -28,8 +28,6 @@ class Car {
 
   @Column()
   brand: string;
-
-  
   /* Uma categoria pode esta disponível para um ou vários carros
   muitos carros para uma categoria
   */
@@ -43,7 +41,7 @@ class Car {
   @ManyToMany( () => Specification)
   @JoinTable({
     name: "specifications_cars",
-    joinColumns: [{name: "cars_id"}],
+    joinColumns: [{name: "car_id"}],
     inverseJoinColumns: [{ name: "specification_id"}],
   })
   
