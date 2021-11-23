@@ -266,6 +266,7 @@ services:
 - yarn typeorm migration:create -n AlterUserAddAvatar
 - yarn typeorm migration:create -n CreateCars
 - yarn typeorm migration:create -n CreateSpecificationsCars
+- yarn typeorm migration:create -n CreateCarImages
 
 
 ### Tests
