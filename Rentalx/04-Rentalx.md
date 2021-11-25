@@ -267,6 +267,7 @@ services:
 - yarn typeorm migration:create -n CreateCars
 - yarn typeorm migration:create -n CreateSpecificationsCars
 - yarn typeorm migration:create -n CreateCarImages
+- yarn typeorm migration:create -n CreateRentals
 
 
 ### Tests
