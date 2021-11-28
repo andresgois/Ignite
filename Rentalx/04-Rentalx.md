@@ -273,7 +273,7 @@ services:
 
 ### Tests
 - yarn jest --init
-
+- *set NODE_ENV=test && jest --runInBand --detectOpenHandles*
 
 ### Requisitos Funcionais
 - Funcionalidades que que nosso sistema vai ter.
