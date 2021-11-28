@@ -31,42 +31,27 @@ describe("Create category controller", () => {
     await connection.close();
   });
 
-  it("Shold be able to crate a new category", async () => {
+  it("Shold be able to to list all categories", async () => {
     const responseToken = await request(app).post("/session").send({
       email: "admin@rentx.com.br",
       password: "admin"
     });
-
-    console.log(process.env.NODE_ENV);
-    console.log(responseToken.body);
     const { token } = responseToken.body;
 
-    const response = await request(app).post("/categories").send({
+    await request(app).post("/categories").send({
       name: "Category Supertest",
       description: "Category Supertest",
     }).set({
       Authorization: `Bearer ${token}`,
     })
 
-    expect(response.status).toBe(201);
-  });
+    const response =  await request(app).get("/categories");
+    console.log(response);
 
-  it("Shold not be able to crate a new category with name exists", async () => {
-    const responseToken = await request(app).post("/session").send({
-      email: "admin@rentx.com.br",
-      password: "admin"
-    });
-
-    const { token } = responseToken.body;
-
-    const response = await request(app).post("/categories").send({
-      name: "Category Supertest",
-      description: "Category Supertest",
-    }).set({
-      Authorization: `Bearer ${token}`,
-    })
-
-    expect(response.status).toBe(400);
+    expect(response.status).toBe(200);
+    expect(response.body.length).toBe(1);
+    expect(response.body[0]).toHaveProperty("id");
+    expect(response.body[0].name).toEqual("Category Supertest");
   });
 
 });
