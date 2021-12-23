@@ -359,3 +359,10 @@ services:
 - Caso tenha alguma multa, deverá ser somado ao total do aluguel.
 - O usuário não precisa está logado no sistema.
 
+# Listagem de Alugueispara usuários
+
+**RF**
+- Deve ser possível realizar a busca de todos os alugueis para o usuário
+
+**RN**
+- O usuário deve estar logado na aplicação
