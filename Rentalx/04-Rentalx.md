@@ -258,9 +258,9 @@ services:
 ```
 "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
 ```
-- yarn typeorm migration:create -n CreateCategories
 - yarn typeorm migration:run
 - yarn typeorm migration:revert
+- yarn typeorm migration:create -n CreateCategories
 - yarn typeorm migration:create -n CreateSpecifications
 - yarn typeorm migration:create -n CreateUsers
 - yarn typeorm migration:create -n AlterUserAddAvatar
@@ -268,7 +268,8 @@ services:
 - yarn typeorm migration:create -n CreateSpecificationsCars
 - yarn typeorm migration:create -n CreateCarImages
 - yarn typeorm migration:create -n CreateRentals
-- yarn typeorm migration:revert
+- yarn typeorm migration:create -n CreateUsersToken
+
 
 
 ### Tests
@@ -366,3 +367,9 @@ services:
 
 **RN**
 - O usuário deve estar logado na aplicação
+
+
+### ERROS
+- ormconfig.json
+  -  "host": "localhost",
+  -  "host": "database_ignite",
