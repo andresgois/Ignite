@@ -11,7 +11,7 @@ let connection: Connection;
 describe("Create category controller", () => {
 
   beforeAll( async () => {
-    connection = await createConnection();
+    connection = await createConnection('localhost');
     await connection.runMigrations();
 
     const id = uuidV4();
