@@ -37,8 +37,7 @@ describe("Create category controller", () => {
       password: "admin"
     });
 
-    console.log(process.env.NODE_ENV);
-    console.log(responseToken.body);
+    //console.log(responseToken.body);
     const { token } = responseToken.body;
 
     const response = await request(app).post("/categories").send({

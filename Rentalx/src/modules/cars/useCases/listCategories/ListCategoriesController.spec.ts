@@ -46,7 +46,7 @@ describe("Create category controller", () => {
     })
 
     const response =  await request(app).get("/categories");
-    console.log(response);
+    //console.log(response);
 
     expect(response.status).toBe(200);
     expect(response.body.length).toBe(1);
