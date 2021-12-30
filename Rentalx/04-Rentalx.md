@@ -384,3 +384,7 @@ services:
 - ormconfig.json
   -  "host": "localhost",
   -  "host": "database_ignite",
+
+### E-mail Fake
+
+[Ethereal](https://ethereal.email/)
