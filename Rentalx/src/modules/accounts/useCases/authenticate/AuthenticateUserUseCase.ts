@@ -6,6 +6,7 @@ import { inject, injectable } from "tsyringe";
 import { UsersTokensRepository } from "@modules/accounts/infra/repositories/UsersTokensRepository";
 import auth from '@config/auth';
 import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
+import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTokensRepository";
 
 interface IRequest {
   email: string;
@@ -27,7 +28,7 @@ class AuthenticateUserUseCase {
     @inject("UsersRepository")
     private usersRepository: IUsersRepository,
     @inject("UsersTokensRepository")
-    private usersTokensRepository: UsersTokensRepository,
+    private usersTokensRepository: IUsersTokensRepository,
     @inject("DayjsDateProvider")
     private dayjsDateProvider: IDateProvider
   ){}
