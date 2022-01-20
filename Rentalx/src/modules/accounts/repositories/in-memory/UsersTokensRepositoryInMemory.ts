@@ -3,7 +3,7 @@ import { UserTokens } from "@modules/accounts/infra/typeorm/entities/UserTokens"
 import { IUsersTokensRepository } from "../IUsersTokensRepository";
 
 
-class UsersTokensRepositoryInMemory implements IUsersTokensRepository{
+class UsersTokensRepositoryInMemory implements IUsersTokensRepository {
 
   usersTokens: UserTokens[] = [];
 
@@ -17,16 +17,13 @@ class UsersTokensRepositoryInMemory implements IUsersTokensRepository{
     this.usersTokens.push(userToken);
     return userToken;
   }
-  findByUserId(user_id: string): Promise<UserTokens[]> {
-    throw new Error("Method not implemented.");
-  }
   async findByUserIdAndRefreshToken(user_id: string, refresh_token: string): Promise<UserTokens> {
     const userToken = this.usersTokens.find(
       (ut) => ut.user_id === user_id && ut.refresh_token === refresh_token
-    );
-    return userToken;
-
-  }
+      );
+      return userToken;
+      
+    }
   async deleteById(id: string): Promise<void> {
     const userToken = this.usersTokens.find( (ut) => ut.id === id );
     this.usersTokens.splice(this.usersTokens.indexOf(userToken));
@@ -34,10 +31,14 @@ class UsersTokensRepositoryInMemory implements IUsersTokensRepository{
   async findByRefreshToken(refresh_token: string): Promise<UserTokens> {
     const userToken = this.usersTokens.find(
       (ut) => ut.refresh_token === refresh_token
-    );
-    return userToken;
+      );
+      return userToken;
+    }
+    
+  async findByUserId(user_id: string): Promise<UserTokens[]> {
+    throw new Error("Method not implemented.");
   }
 
 }
-
+    
 export { UsersTokensRepositoryInMemory }

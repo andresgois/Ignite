@@ -11,7 +11,7 @@ let connection: Connection;
 describe("Create category controller", () => {
 
   beforeAll( async () => {
-    connection = await createConnection('localhost');
+    connection = await createConnection();
     await connection.runMigrations();
 
     const id = uuidV4();
@@ -38,31 +38,31 @@ describe("Create category controller", () => {
     });
 
     //console.log(responseToken.body);
-    const { token } = responseToken.body;
+    const { refresh_token } = responseToken.body;
 
     const response = await request(app).post("/categories").send({
       name: "Category Supertest",
       description: "Category Supertest",
     }).set({
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${refresh_token}`,
     })
 
     expect(response.status).toBe(201);
   });
 
-  it("Shold not be able to crate a new category with name exists", async () => {
+  it("Should not be able to create a new category with name exists 1", async () => {
     const responseToken = await request(app).post("/session").send({
       email: "admin@rentx.com.br",
       password: "admin"
     });
 
-    const { token } = responseToken.body;
+    const { refresh_token } = responseToken.body;
 
     const response = await request(app).post("/categories").send({
       name: "Category Supertest",
       description: "Category Supertest",
     }).set({
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${refresh_token}`,
     })
 
     expect(response.status).toBe(400);
