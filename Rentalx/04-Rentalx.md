@@ -384,7 +384,9 @@ services:
 - ormconfig.json
   -  "host": "localhost",
   -  "host": "database_ignite",
-
+- set NODE_ENV=test && jest --runInBand --detectOpenHandles
 ### E-mail Fake
-
 [Ethereal](https://ethereal.email/)
+
+### Test
+- yarn test src/modules/accounts/useCases/sendForgotPasswordMail/SendForgotPasswordMailUseCase.spec.ts
