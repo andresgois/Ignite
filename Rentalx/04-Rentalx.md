@@ -78,6 +78,8 @@
   - **OCP** Open Closed Principle (Princípio do Aberto/Fechado)
 ##### L
   - **LSP** Liskov Substituion Priciple (Princípio da Substituição de Liskov)
+  - Bárbara liskov
+  - Se você tem uma classe "S", e essa classe é um subtipo de "T", então todos os objetos do tipo "T", podem ser subtituidos pelo tipo "S" sem que seja necessário alterar as propriedades desse programa. 
 ##### I
   - **ISP** Interface Segregation Principle (Princípio da Segregação de Interface)
 ##### D
@@ -92,6 +94,17 @@
 - [Get Started with Docker | Docker](https://www.docker.com/get-started)
 
 ---
+
+## TSYRINGE
+- container faz o registro da instância
+- singleton
+- Interface para o repositório
+- nome para o registro
+- repositório
+- Inject passando como parametro o nome do registro
+- Injectable: permite a injecção da classe, por exemplo pelo controle
+- container.resolve no controller: para injectar a dependência 
+- importar o shared/container no server.ts
 
 ### Windows (64 Bit)
 
@@ -390,3 +403,25 @@ services:
 
 ### Test
 - yarn test src/modules/accounts/useCases/sendForgotPasswordMail/SendForgotPasswordMailUseCase.spec.ts
+
+## pgAdmin
+
+### Usado como SGBD
+- Acesso:  http://localhost:15432
+- E-mail e senha para acesso criados no docker-compose
+- Server
+  - Create
+    - Server
+      - General
+        - Nome do banco
+      - Connection
+        - Host
+        - Porta
+        - Database
+        - Usuário
+        - Senha
+
+
+## OBS
+- Pega o refresh_token do serviço de **Session**
+- Colocar no serviço Refresh Token, ele gera um novo token
