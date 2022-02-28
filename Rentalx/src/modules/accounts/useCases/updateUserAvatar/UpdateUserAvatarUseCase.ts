@@ -5,7 +5,7 @@
 
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { IStorageProvider } from "@shared/container/providers/StorageProvider/IStorageProvider";
-import { deleteFile } from "@utils/file";
+//import { deleteFile } from "@utils/file";
 import { inject, injectable } from "tsyringe";
 
 // Criar controller
@@ -26,7 +26,6 @@ class UpdateUserAvatarUseCase {
     const user = await this.usersRepository.findById(user_id);
 
     if(user.avatar){
-     // await deleteFile(`./tmp/avatar/${user.avatar}`);
      await this.storageProvider.delete(user.avatar, "avatar");
     }
     await this.storageProvider.save(avatar_file, "avatar");
