@@ -421,7 +421,9 @@ services:
         - Usuário
         - Senha
 
-
+## SDK AWS
+- yarn add aws-sdk
+[Variaveis de ambiente que AWS identifica](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-environment.html)
 ## OBS
 - Pega o refresh_token do serviço de **Session**
 - Colocar no serviço Refresh Token, ele gera um novo token
