@@ -1,10 +1,9 @@
+import { inject, injectable } from "tsyringe";
 import { AppError } from "@shared/errors/AppError";
-import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
-import { inject, injectable } from "tsyringe";
-import { UsersTokensRepository } from "@modules/accounts/infra/repositories/UsersTokensRepository";
 import auth from '@config/auth';
+import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTokensRepository";
 
