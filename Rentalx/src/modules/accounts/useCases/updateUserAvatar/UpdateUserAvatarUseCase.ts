@@ -3,10 +3,10 @@
 // Configuração upload multer
 // Criar regras de negócio do upload
 
+import { inject, injectable } from "tsyringe";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { IStorageProvider } from "@shared/container/providers/StorageProvider/IStorageProvider";
 //import { deleteFile } from "@utils/file";
-import { inject, injectable } from "tsyringe";
 
 // Criar controller
 interface IRequest {
