@@ -427,3 +427,69 @@ services:
 ## OBS
 - Pega o refresh_token do serviço de **Session**
 - Colocar no serviço Refresh Token, ele gera um novo token
+
+
+## Na máquina AWS
+- sudo apt-get update
+- sudo apt-get upgrade
+- sudo adduser app
+- sudo usermod -aG sudo app
+- mkdir .ssh
+- chmod 700 .ssh
+- cd .ssh
+- touch authorized_keys
+- chmod 600 authorized_keys
+- vi authorized_keys
+  - Pelo git bash em sua máquina local
+  - ssh-keygen
+  - Enter x3
+  - vá em c/Users/seu_usuario/.ssh/id_rsa
+  - ssh app@54.165.203.32
+  - sudo service ssh restart
+  - cole a chave gerada no *authorized_keys*
+- :wq!
+
+### Instalação do Node na máquina AWS
+[Nodejs](https://github.com/nodesource/distributions/blob/master/README.md)
+```
+curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+### Instalação do Docker na máquina AWS
+[Docker](https://docs.docker.com/engine/install/ubuntu/)
+```
+sudo apt-get remove docker docker-engine docker.io containerd runc
+
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo \
+"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+```
+
+### Instalação do Docker-compose na máquina AWS
+[Docker compose](https://docs.docker.com/compose/install/)
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+
+```
+
+### Instalação YARN
+- sudo npm install --global yarn
+
+### Libs para build
+- yarn add @babel/preset-typescript @babel/cli @babel/core @babel/plugin-proposal-class-properties @babel/plugin-proposal-decorators @babel/preset-env babel-plugin-module-resolver babel-plugin-transform-typescript-metadata -D
