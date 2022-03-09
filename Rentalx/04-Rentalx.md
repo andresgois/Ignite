@@ -493,3 +493,13 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 ### Libs para build
 - yarn add @babel/preset-typescript @babel/cli @babel/core @babel/plugin-proposal-class-properties @babel/plugin-proposal-decorators @babel/preset-env babel-plugin-module-resolver babel-plugin-transform-typescript-metadata -D
+
+### Keygen de EC2 para github
+- gerar keygen
+- ssh-keygen
+- cat .ssh/id_rsa.pub
+- copia tudo
+- vai em no github
+- settings
+- SSH and GPG key
+- e cola
