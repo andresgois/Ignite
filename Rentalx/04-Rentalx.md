@@ -503,3 +503,11 @@ sudo chmod +x /usr/local/bin/docker-compose
 - settings
 - SSH and GPG key
 - e cola
+
+### Criação de usuário para o docker
+- sudo groupadd docker
+- sudo usermod -aG docker $USER
+
+### Subir apenas o serviço de banco no docker-compose
+- docker-compose up -d database
+- docker exec -it database_ignite /bin/bash
