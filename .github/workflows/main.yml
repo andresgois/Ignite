@@ -31,10 +31,14 @@ jobs:
           node-version: 14.x
           
       - name: Install Dependecies
-        run: yarn
+        run: |
+             cd Ignite/Rentalx/
+             yarn
         
       - name: Build
-        run: yarn build
+        run: |
+             cd Ignite/Rentalx/
+             yarn run build
       
       - uses: appleboy/scp-action@master
         with:
