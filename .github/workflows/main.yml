@@ -32,12 +32,12 @@ jobs:
           
       - name: Install Dependecies
         run: |
-             cd Ignite/Rentalx/
+             cd Rentalx/
              yarn
         
       - name: Build
         run: |
-             cd Ignite/Rentalx/
+             cd Rentalx/
              yarn run build
       
       - uses: appleboy/scp-action@master
