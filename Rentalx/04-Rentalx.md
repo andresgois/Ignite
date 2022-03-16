@@ -1,8 +1,11 @@
 # Projeto Rentalx
+
 ## Configurações Prettier e Eslint
+
 - [Configs](https://www.notion.so/ESLint-e-Prettier-Trilha-Node-js-d3f3ef576e7f45dfbbde5c25fa662779#eaf6e8bdcabc4d809cdae302e29750da)
 
 ## Dependências
+
 - yarn init -y
 - yarn add eslint -D
 - yarn eslint --init
@@ -14,12 +17,12 @@
 - yarn add typescript -D
 - yarn tsc --init
 - desabilitar
-  - "strict": true, 
+  - "strict": true,
 - yarn add uuid
 - yarn add @types/uuid -D
 - yarn add multer
 - yarn add @types/multer
-- yarn add csv-parse 
+- yarn add csv-parse
 - yarn add swagger-ui-express
 - yarn add @types/swagger-ui-express -D
 - yarn add typeorm reflect-metadata
@@ -38,21 +41,25 @@
 - yarn add ts-jest -D
 - yarn add tsconfig-paths -D
 
-
-- **Ao  instalar o tsconfig/paths, será necessário adicionar ao package.json a seguinte descrição**
-  - *-r tsconfig-paths/register*
+- **Ao instalar o tsconfig/paths, será necessário adicionar ao package.json a seguinte descrição**
+  - _-r tsconfig-paths/register_
   - **Para que ele reconheça na hora de executa a importação por modulos**
+
 ### Arquivos de ajuda
+
 - **Pega o hash para colocar na função do JWT**
 - [Criptografia MD](https://www.md5online.org/md5-encrypt.html)
 - **Verifica se o JWT é valido**
 - [JWT.io](https://jwt.io/)
+
 ### Configurando debug
+
 - Clique no botão Play que tem um inserto
 - Em Baixo de Run adn Debug
   - create a launc.json file
   - opção de NodeJS
 - **launch** : Executa o debug assim que roda a aplicação
+
 ```
 {
   "version": "0.2.0",
@@ -67,35 +74,47 @@
   ]
 }
 ```
+
 #### Adicionar --inspect aos scripts de dev
 
 ![Diagrama do projeto](../img/diagrama.png)
 
 ## SOLID
+
 ##### S
-  - **SRP** Single Responsability Principle (Princípio da Responsabilidade Única)
+
+- **SRP** Single Responsability Principle (Princípio da Responsabilidade Única)
+
 ##### O
-  - **OCP** Open Closed Principle (Princípio do Aberto/Fechado)
+
+- **OCP** Open Closed Principle (Princípio do Aberto/Fechado)
+
 ##### L
-  - **LSP** Liskov Substituion Priciple (Princípio da Substituição de Liskov)
-  - Bárbara liskov
-  - Se você tem uma classe "S", e essa classe é um subtipo de "T", então todos os objetos do tipo "T", podem ser subtituidos pelo tipo "S" sem que seja necessário alterar as propriedades desse programa. 
+
+- **LSP** Liskov Substituion Priciple (Princípio da Substituição de Liskov)
+- Bárbara liskov
+- Se você tem uma classe "S", e essa classe é um subtipo de "T", então todos os objetos do tipo "T", podem ser subtituidos pelo tipo "S" sem que seja necessário alterar as propriedades desse programa.
+
 ##### I
-  - **ISP** Interface Segregation Principle (Princípio da Segregação de Interface)
+
+- **ISP** Interface Segregation Principle (Princípio da Segregação de Interface)
+
 ##### D
-  - **DIP** Dependency Inversion Principle (Princípio da Inversão de Dependência)
-  
+
+- **DIP** Dependency Inversion Principle (Princípio da Inversão de Dependência)
+
 ## Instalação do Docker
 
 - O Docker é uma ferramenta sensacional que nos permite pular as etapas chatas de configuração de serviços para nossa aplicação. Além disso, ele permite reaproveitarmos o Kernel da máquina hospedeira entre vários serviços executados simultaneamente, conhecidos como containers.
 
-- Para iniciar a instalação do Docker vamos prosseguir para a seção "Get Started" presente no site da ferramenta: 
+- Para iniciar a instalação do Docker vamos prosseguir para a seção "Get Started" presente no site da ferramenta:
 
 - [Get Started with Docker | Docker](https://www.docker.com/get-started)
 
 ---
 
 ## TSYRINGE
+
 - container faz o registro da instância
 - singleton
 - Interface para o repositório
@@ -103,14 +122,14 @@
 - repositório
 - Inject passando como parametro o nome do registro
 - Injectable: permite a injecção da classe, por exemplo pelo controle
-- container.resolve no controller: para injectar a dependência 
+- container.resolve no controller: para injectar a dependência
 - importar o shared/container no server.ts
 
 ### Windows (64 Bit)
 
-- O Docker no Windows possui alguns requisitos: 
+- O Docker no Windows possui alguns requisitos:
 
-- Microsoft Windows 10 Professional  ou Enterprise 64-bit
+- Microsoft Windows 10 Professional ou Enterprise 64-bit
 - Caso você possua o Windows 10 Home 64-bit também é possível usar o Docker mas será necessário instalar o WSL2 também (o instalador já se encarrega disso para você)
 
 - Caso você possua o Windows 32-bit, não será possível realizar a instalação do Docker.
@@ -193,7 +212,9 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 
 - Por fim, teste novamente com o comando `docker-compose --version` para checar se está tudo funcionando.
+
 ### Comandos utilizados durante aplicação
+
 - docker -v
 - docker build -t rentx .
 - docker run -p 3333:3333 rentx
@@ -202,6 +223,7 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 - docker stop nome_container
 
 ### Dockerfile da aplicação
+
 ```
 FROM node
 
@@ -219,9 +241,10 @@ CMD ["npm","run","dev"]
 ```
 
 ### docker-compose da aplicação
+
 - docker-compose up
 - **mostra logs do container em execução**
-- docker logs nome-container -f 
+- docker logs nome-container -f
 - docker-compose up --force-recreate
 - docker inspect --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' rentx
 - docker inspect --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' database_ignite
@@ -242,7 +265,8 @@ export default async (host = "database"): Promise<Connection> => {
   );
 };
 ```
-  - No servidor
+
+- No servidor
 
 ```
 import createConnection from "@shared/infra/typeorm";
@@ -261,16 +285,20 @@ services:
       - .:/usr/app
 
 ```
+
 - Habilitar para permitir decorators
-	- "experimentalDecorators": true,  
-	- "emitDecoratorMetadata": true,   
+  - "experimentalDecorators": true,
+  - "emitDecoratorMetadata": true,
 
 ### Migrations
+
 - Executando migrations
-	- package.json 
+  - package.json
+
 ```
 "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
 ```
+
 - yarn typeorm migration:run
 - yarn typeorm migration:revert
 - yarn typeorm migration:create -n CreateCategories
@@ -283,88 +311,101 @@ services:
 - yarn typeorm migration:create -n CreateRentals
 - yarn typeorm migration:create -n CreateUsersToken
 
-
-
 ### Tests
+
 - yarn jest --init
-- *set NODE_ENV=test && jest --runInBand --detectOpenHandles*
+- _set NODE_ENV=test && jest --runInBand --detectOpenHandles_
 
 ### Requisitos Funcionais
+
 - Funcionalidades que que nosso sistema vai ter.
   - Usuário vai pode cadastrar uma categoria
   - Usuário poderá recuperar a senha de E-mail
+
 ### Requisitos Não Funcionais
+
 - Requisitos que não estão ligados diretamente a aplicação com a regra de negócio
   - Os dados devem ser salvos no banco de dados postgres
   - E mais uma conteito de qual banco utiliza ou biblioteca
+
 ### Regra de negócio
+
 - Regras de fato por trás de nossos requisitos.
   - Não deve ser possível cadastrar uma categoria já existente.
   - Não é possível cadastrar categoria com nome menor que quatro.
 
-
 ## Cadastro de carros
 
 **RF**
+
 - Deve ser possível cadastrar um novo carro.
 
 **RN**
+
 - Não deve ser possível cadatrar um carro com uma placa já existente.
 - O carro deve ser cadastrado, por padrão, com disponibilidade.
-- *O usuário responsavél pelo cadastro deve ser um usuário administrador.*
+- _O usuário responsavél pelo cadastro deve ser um usuário administrador._
 
 ## Listagem de carros
 
 **RF**
+
 - Deve ser possível listar todos os carros disponíveis.
 - Deve ser possível listar todos os carros disponíveis pelo nome da categoria
 - Deve ser possível listar todos os carros disponíveis pelo nome do carro
 
 **RN**
+
 - O usuário não precisa está logado no sistema.
 
 ## Cadastro de especificações do carro
 
 **RF**
-- Deve ser possível cadastrar uma especificação para um  carro.
+
+- Deve ser possível cadastrar uma especificação para um carro.
 - Deve ser possível listar todas as especificações
 - Deve ser possível listar todos os carros.
 
 **RN**
+
 - Não deve ser possível cadastrar uma especificação para um carro não cadastrado.
 - Não deve ser possível cadastrar uma especificaçao já existente para um mesmo carro.
 - O usuário responsável pelo cadastro dever ser um usuário administrador
 
-
 ## Cadastro da imagem do carro
 
 **RF**
+
 - Deve ser possível cadastrar a imagem do carro
 - Deve ser possível listar todos os carros
 
 **RNF**
+
 - Utilizar o multer para upload dos arquivos
 
 **RN**
--  O usuário deve poder cadastrar mais de uma imagem para o mesmo carro.
-- o usuário responsável pelo cadastro deve ser um usuário administrador.
 
+- O usuário deve poder cadastrar mais de uma imagem para o mesmo carro.
+- o usuário responsável pelo cadastro deve ser um usuário administrador.
 
 ## Aluguel de carro
 
 **RF**
+
 - Deve ser possivel cadastrar um aluguel
 
 **RNF**
 
 **RN**
-- O aluguel deve ter duração mínima de  24 horas
+
+- O aluguel deve ter duração mínima de 24 horas
 - Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo usuário.
 - Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo carro.
 - O usuário deve esta logado na aplicação
 - Ao realizar um aluguel, o status do carro deverá fica indisponível.
 
 ## Devolução de carros
+
 - Se o carro for devolvido com menos de 24 horas, deverá ser cobrada a diária completa.
 - Ao realizar a devolução, o carro deverá ser liberado para outro aluguel
 - Ao realizar a devolução, o usuário deverá ser liberado para outro aluguel
@@ -376,38 +417,47 @@ services:
 # Listagem de Alugueispara usuários
 
 **RF**
+
 - Deve ser possível realizar a busca de todos os alugueis para o usuário
 
 **RN**
+
 - O usuário deve estar logado na aplicação
 
 # Recuperar senha
 
 **RF**
+
 - Deve ser possível o usuário recuperar a senha informando o e-mail
 - O Usuário deve receber um e-mail com o passo a passo para a recuperação da senha
+
 * O Usuário deve conseguir inserir uma nova senha
 
 **RN**
+
 - O Usuário precisa informar uma nova senha
 - O link enviado para a recuperação deve expirar em 3 horas.
 
-
 ### ERROS
+
 - ormconfig.json
-  -  "host": "localhost",
-  -  "host": "database_ignite",
+  - "host": "localhost",
+  - "host": "database_ignite",
 - set NODE_ENV=test && jest --runInBand --detectOpenHandles
+
 ### E-mail Fake
+
 [Ethereal](https://ethereal.email/)
 
 ### Test
+
 - yarn test src/modules/accounts/useCases/sendForgotPasswordMail/SendForgotPasswordMailUseCase.spec.ts
 
 ## pgAdmin
 
 ### Usado como SGBD
-- Acesso:  http://localhost:15432
+
+- Acesso: http://localhost:15432
 - E-mail e senha para acesso criados no docker-compose
 - Server
   - Create
@@ -422,14 +472,17 @@ services:
         - Senha
 
 ## SDK AWS
+
 - yarn add aws-sdk
-[Variaveis de ambiente que AWS identifica](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-environment.html)
+  [Variaveis de ambiente que AWS identifica](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-environment.html)
+
 ## OBS
+
 - Pega o refresh_token do serviço de **Session**
 - Colocar no serviço Refresh Token, ele gera um novo token
 
-
 ## Na máquina AWS
+
 - sudo apt-get update
 - sudo apt-get upgrade
 - sudo adduser app
@@ -446,17 +499,22 @@ services:
   - vá em c/Users/seu_usuario/.ssh/id_rsa
   - ssh app@54.165.203.32
   - sudo service ssh restart
-  - cole a chave gerada no *authorized_keys*
+  - cole a chave gerada no _authorized_keys_
 - :wq!
 
 ### Instalação do Node na máquina AWS
+
 [Nodejs](https://github.com/nodesource/distributions/blob/master/README.md)
+
 ```
 curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
+
 ### Instalação do Docker na máquina AWS
+
 [Docker](https://docs.docker.com/engine/install/ubuntu/)
+
 ```
 sudo apt-get remove docker docker-engine docker.io containerd runc
 
@@ -479,7 +537,9 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
 ### Instalação do Docker-compose na máquina AWS
+
 [Docker compose](https://docs.docker.com/compose/install/)
+
 ```
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
@@ -489,12 +549,15 @@ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 ### Instalação YARN
+
 - sudo npm install --global yarn
 
 ### Libs para build
+
 - yarn add @babel/preset-typescript @babel/cli @babel/core @babel/plugin-proposal-class-properties @babel/plugin-proposal-decorators @babel/preset-env babel-plugin-module-resolver babel-plugin-transform-typescript-metadata -D
 
 ### Keygen de EC2 para github
+
 - gerar keygen
 - ssh-keygen
 - cat .ssh/id_rsa.pub
@@ -505,9 +568,236 @@ sudo chmod +x /usr/local/bin/docker-compose
 - e cola
 
 ### Criação de usuário para o docker
+
 - sudo groupadd docker
 - sudo usermod -aG docker $USER
 
 ### Subir apenas o serviço de banco no docker-compose
+
 - docker-compose up -d database
 - docker exec -it database_ignite /bin/bash
+
+### Configurar actions do GITHUB
+
+### SSH
+
+- na sua máquina
+- criar uma chave ssh
+- ssh-keygen
+  - github_actions
+  - dai vai gerar duas chaves, github_actions e github_actions.pub
+- copia a github_actions.pub e cola junto com a authorized_keys na aws
+- cat >> authorized_keys
+- dê enter
+- cole github_actions.pub
+- ctrl + d
+- pronto foi adicionada a authorized_keys
+- voltando para sua máquina dê um
+- cat github_actions, e copie tudo
+- será a chave **SSH_KEY** do github
+
+#### ACTIONS
+
+- actions
+- set up workflow youself
+
+```
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  #pull_request:
+    #branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Setup node: https://github.com/actions/setup-node
+      - name: Setup Nodejs
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+
+      - name: Install Dependecies
+        run: |
+             cd Rentalx/
+             yarn
+
+      - name: Build
+        run: |
+             cd Rentalx/
+             yarn run build
+      # Copia arquivos via SSH:  https://github.com/marketplace/actions/scp-files
+      - uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_KEY}}
+          source: "., !node_modules"
+          target: "~/app/Ignite"
+```
+
+- nível gratuito **2000 builds minuto no mês**
+
+#### SETTINGS
+
+- **Credenciais**
+- Settings
+- Secret Actions
+- chaves a serem criadas
+
+```
+SSH_HOST  = ip da aws
+SSH_KEY   = github_actions
+SSH_PORT  = 22
+SSH_USER  = app
+```
+
+### Refereences
+
+[Setup node](https://github.com/actions?q=&type=all&language=&sort=)
+[SCP files](https://github.com/marketplace/actions/scp-files)
+
+## Proxy reverso com NGINX
+
+- sudo apt install nginx
+- em security group na aws
+- habilitar as portas 80-http e 443-https
+- cd /etc/nginx/sites-available/
+- cat default
+- sudo touch rentx
+
+```
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        location / {
+          proxy_pass http://localhost:3333;
+          proxy_http_version 1.1;
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection 'upgrade';
+          proxy_set_header Host $host;
+          proxy_cache_bypass $http_upgrade;
+    }
+}
+```
+
+[how to set up a node.js application for production on ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-18-04-pt)
+
+- _mude a porta_
+- criar link simbolico
+- sudo ln -s /etc/nginx/sites-available/rentx rentx
+- sudo rm -rf default
+- sudo service nginx restart
+- sudo systemctl restart nginx
+- **OBS: Deu problema, então renomeie rentx para default**
+- node dist/shared/infra/http/server.js
+
+## PM2
+
+- gerenciador de processos do node
+- https://pm2.keymetrics.io/
+- sudo npm install pm2 -g
+- pm2 start dist/shared/infra/http/server.js --name rentx_api
+- pm2 start rentx_api
+- pm2 stop rentx_api
+- ./node_modules/.bin/typeorm migration:run
+
+## Acessar Postgres pelo docker
+
+- docker exec -it database_ignite /bin/bash
+- postgres -h localhost -U docker -w
+- psql --host=localhost --port=5432 -W --dbname=ignite
+
+## Node modules atualizada, rodar migrations
+
+[scp](https://github.com/appleboy/ssh-action)
+
+```
+- name: Update API
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_KEY}}
+          script: |
+            cd ~/app/Ignite/Rentalx
+            yarn
+            ./node_modules/.bin/typeorm migration:run
+            pm2 restart rentx_api
+```
+
+## Configurando domínio e SSL
+
+- No console da AWS
+- Router 53
+
+  - Criar zona hospedada
+  - Domínio que você comprou
+  - Zona hospedada públic
+  - Criar
+  - Acessa a zona criada
+  - Criar registro
+    - Coloca um subdomínio
+    - Ip Instância
+    - Criar registro
+
+- Vá no Google domains
+- DNS
+- Registros de recursos personalizados
+  - Coloca o subdomínio criado na aws
+  - Letra que tiver no Alias da AWS
+  - IP da instância
+  - Adicionar
+- Verificar se está tudo ok
+- vai em :
+  [Whats My DNS](https://www.whatsmydns.net/)
+- coloca o DNS com subdomínio
+
+## Certificado WEB
+
+- Tem que ter domínio pra isso
+  [Validar Certificado](https://certbot.eff.org/)
+
+- Seleciona o servidor
+- Seleciona o S.O
+  - Conecta via SSh
+  - Instala o snapd **não obrigatório**
+  - sudo snap install core; sudo snap refresh core
+  - sudo snap install --classic certbot
+  - sudo ln -s /snap/bin/certbot /usr/bin/certbot
+  - sudo certbot --nginx
+  - **colocar o do subdomínio**
+  - sudo certbot certonly --nginx
+  - sudo certbot renew --dry-run
+  - Verificar se as configurações foram incluidas no /etc/nginx/sites-available
+  - vim default
+  - sudo service nginx restart
+  - fazer uma requisição para
+  - https://subdominio.dominio.com **o seu**
+
+## CORS
+
+- npm i cors
+- npm i @types/cors -D
+
+[Google Domain](https://domains.google/intl/pt-BR/?gclid=CjwKCAjw8sCRBhA6EiwA6_IF4VAapXMjTPo7bHUUMDqKhCv2rWBu9tfnPQ568cqGsiBzEcrJf9KXOhoCeeEQAvD_BwE&gclsrc=aw.ds)
