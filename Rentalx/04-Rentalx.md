@@ -801,3 +801,24 @@ server {
 - npm i @types/cors -D
 
 [Google Domain](https://domains.google/intl/pt-BR/?gclid=CjwKCAjw8sCRBhA6EiwA6_IF4VAapXMjTPo7bHUUMDqKhCv2rWBu9tfnPQ568cqGsiBzEcrJf9KXOhoCeeEQAvD_BwE&gclsrc=aw.ds)
+
+## Seguraça
+
+### Limitar acessos por IP
+
+[Limiter](https://github.com/animir/node-rate-limiter-flexible)
+[Express middleware](https://github.com/animir/node-rate-limiter-flexible/wiki/Express-Middleware)
+
+- yarn add rate-limiter-flexible
+- yarn add redis
+- yarn add @types/redis -D
+
+## Controller de Erros
+
+- Necessário cadastro
+  [Sentry io](https://sentry.io/)
+- Criar projeto
+- Selecionar plataforma, no caso Express
+- Ele dará o passo a passo de instalação e configuração
+  [Docs](https://docs.sentry.io/platforms/node/guides/express/?_ga=2.121638734.454883820.1647559644-869103796.1647559644&_gac=1.247468533.1647559644.Cj0KCQjwuMuRBhCJARIsAHXdnqO364FcRGRjIobTcTWK7xExvf3NpkYpsNp8rScAqGwUKyk28CiaaugaAi0HEALw_wcB)
+  - Installation Instructions
